@@ -1,0 +1,7 @@
+plugins {
+    id 'com.esc.micro.java-conventions'
+}
+
+dependencies {
+    implementation project(':kw-core-model')
+}

@@ -1,0 +1,37 @@
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  springfox:
+    documentation:
+      auto-startup: false
+  h2:
+    console.enabled: true
+  application:
+    name: Utatlan
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driverClassName: ${DB_DRIVER_CLASSNAME}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        dialect: ${DB_DIALECT}
+        format_sql: true
+        id:
+          new_generator_mappings: false
+    open-in-view: false
+    show-sql: false
+    generate-ddl: true
+server:
+  port: ${PORT}
+
+app:
+  jwtSecret: '@!#)*(A(QWNSNDQIWIEHJ'
+  jwtExpirationInMs: 3600000

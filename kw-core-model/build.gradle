@@ -1,0 +1,9 @@
+plugins {
+    id 'com.esc.micro.java-conventions'
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.7.3'
+    implementation 'org.springframework:spring-webmvc:5.3.22'
+    implementation 'commons-io:commons-io:2.7'
+}

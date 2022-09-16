@@ -1,0 +1,9 @@
+rootProject.name = 'kiwi'
+
+//main core modules
+include 'kw-app'
+include 'kw-app-model'
+include 'kw-core'
+include 'kw-core-model'
+include 'kw-core-modules'
+
