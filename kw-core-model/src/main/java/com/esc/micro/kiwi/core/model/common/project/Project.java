@@ -5,8 +5,6 @@ import com.esc.micro.kiwi.core.model.common.payment.Payment;
 import com.esc.micro.kiwi.core.model.common.payment.Rate;
 import com.esc.micro.kiwi.core.model.common.service.Post;
 import com.esc.micro.kiwi.core.model.common.user.User;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
@@ -20,43 +18,34 @@ import java.util.Objects;
 @Table(name = "projects")
 public class Project extends ManagerEntity<Long, Project> {
   private static final long serialVersionUID = 1L;
-
-  public Project() {
-  }
-
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-
   private String type;
-
   private Boolean status;
-
   @OneToMany(mappedBy = "project", cascade = CascadeType.ALL, orphanRemoval = true)
   private List<Payment> payments;
-
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "user_id")
   private User user;
-
   @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(name = "post_project",
       joinColumns = @JoinColumn(name = "project_id", referencedColumnName = "id"),
       inverseJoinColumns = @JoinColumn(name = "post_id", referencedColumnName = "id"))
   private List<Post> posts;
-
   @OneToMany(mappedBy = "project", fetch = FetchType.EAGER,
       cascade = CascadeType.ALL, orphanRemoval = true)
   private List<Rate> rates;
-
   @OneToMany(mappedBy = "project", cascade = CascadeType.ALL, orphanRemoval = true)
   private List<Score> scores;
-
   @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(name = "scope_project",
       joinColumns = @JoinColumn(name = "project_id", referencedColumnName = "id"),
       inverseJoinColumns = @JoinColumn(name = "scope_id", referencedColumnName = "id"))
   private List<Scope> scopes;
+
+  public Project() {
+  }
 
   @Override
   public boolean equals(Object o) {

@@ -1,10 +1,8 @@
 package com.esc.micro.kiwi.appication;
 
-import com.esc.micro.kiwi.appication.security.jwt.JwtAuthenticationFilter;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication

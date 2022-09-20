@@ -16,27 +16,23 @@ import java.util.Objects;
 @Table(name = "postulations")
 public class Postulation extends ManagerEntity<Long, Postulation> {
   private static final long serialVersionUID = 1L;
-
-  public Postulation() {
-  }
-
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-
   @OneToMany(mappedBy = "postulation", cascade = CascadeType.ALL, orphanRemoval = true)
 
   private List<Skill> skills;
-
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "user_id")
   private User user;
-
   @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(name = "postulation_geo",
       joinColumns = @JoinColumn(name = "postulation_id", referencedColumnName = "id"),
       inverseJoinColumns = @JoinColumn(name = "geo_id", referencedColumnName = "id"))
   private List<Geo> geos;
+
+  public Postulation() {
+  }
 
   @Override
   public boolean equals(Object o) {

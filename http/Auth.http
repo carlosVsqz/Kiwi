@@ -13,8 +13,8 @@ Content-Type: application/json
 
 {
   "firstName": "Carlos",
-  "lastName":"Vasquez",
+  "lastName": "Vasquez",
   "username": "CarlosVasquez",
-  "email":"carlos.vasquez@escod.com",
+  "email": "carlos.vasquez@escod.com",
   "password": "Password123"
 }

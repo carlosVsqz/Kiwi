@@ -8,12 +8,8 @@ import java.util.List;
 
 public class UserData implements Serializable {
 
-  public UserData() {
-  }
-
   @JsonIgnore
   private static final long serialVersionUID = 1L;
-
   private String email;
   private String firstName;
   private String lastName;
@@ -21,15 +17,9 @@ public class UserData implements Serializable {
   private String phone;
   private String username;
   private String webSite;
-
   private List<RoleData> roles;
 
-  public List<RoleData> getRoles() {
-    return roles;
-  }
-
-  public void setRoles(List<RoleData> roles) {
-    this.roles = roles;
+  public UserData() {
   }
 
   public UserData(String firstName, String lastName, String username, String email, String password) {
@@ -38,6 +28,14 @@ public class UserData implements Serializable {
     this.username = username;
     this.email = email;
     this.password = password;
+  }
+
+  public List<RoleData> getRoles() {
+    return roles;
+  }
+
+  public void setRoles(List<RoleData> roles) {
+    this.roles = roles;
   }
 
   public String getEmail() {

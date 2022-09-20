@@ -17,30 +17,23 @@ import java.util.Objects;
 @Table(name = "company")
 public class Company extends ManagerEntity<Long, Company> {
   private static final long serialVersionUID = 1L;
-
-  public Company() {
-  }
-
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-
   @Column(name = "name")
   private String name;
-
   @Column(name = "catch_phrase")
   private String catchPhrase;
-
   @Column(name = "bs")
   private String bs;
-
   @OneToOne(mappedBy = "company")
   private User user;
-
   @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
   private List<Rate> rates;
   @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
   private List<Score> scores;
+  public Company() {
+  }
 
   /**
    * Instantiates a new Company.

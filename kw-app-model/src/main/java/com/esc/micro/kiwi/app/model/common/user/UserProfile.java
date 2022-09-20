@@ -5,9 +5,6 @@ import java.time.Instant;
 
 public class UserProfile implements Serializable {
 
-  public UserProfile() {
-  }
-
   private Long id;
   private String username;
   private String firstName;
@@ -17,5 +14,7 @@ public class UserProfile implements Serializable {
   //  private AddressData address;
   private String phone;
   private String website;
+  public UserProfile() {
+  }
 //  private CompanyData company;
 }

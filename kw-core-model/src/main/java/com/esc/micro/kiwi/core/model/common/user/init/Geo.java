@@ -14,20 +14,13 @@ import java.util.Objects;
 @Table(name = "geo")
 public class Geo {
   private static final long serialVersionUID = 1L;
-
-  public Geo() {
-  }
-
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-
   @Column(name = "lat")
   private String lat;
-
   @Column(name = "lng")
   private String lng;
-
   @OneToOne(mappedBy = "geo")
   private Address address;
   @ManyToMany(fetch = FetchType.LAZY)
@@ -35,6 +28,8 @@ public class Geo {
       joinColumns = @JoinColumn(name = "postulation_id", referencedColumnName = "id"),
       inverseJoinColumns = @JoinColumn(name = "geo_id", referencedColumnName = "id"))
   private List<Postulation> postulations;
+  public Geo() {
+  }
 
   /**
    * Instantiates a new Geo.

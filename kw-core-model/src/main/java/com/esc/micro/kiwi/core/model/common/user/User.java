@@ -12,7 +12,6 @@ import com.esc.micro.kiwi.core.model.common.service.Post;
 import com.esc.micro.kiwi.core.model.common.user.init.Address;
 import com.esc.micro.kiwi.core.model.common.user.init.Company;
 import com.esc.micro.kiwi.core.model.common.user.init.Postulation;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -28,64 +27,45 @@ import java.util.List;
 public class User extends ManagerEntity<Long, User> implements Auditable {
 
   private static final long serialVersionUID = 1L;
-
-  public User() {
-  }
-
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-
   @Column(nullable = false)
   private String email;
-
   @Column(nullable = false)
   private String firstName;
-
   @Column(nullable = false)
   private String lastName;
-
   private String password;
-
   private String phone;
-
   private String username;
-
   private String webSite;
-
   private Boolean status;
-
   @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
   @JoinColumn(name = "address_id")
   private Address address;
-
   @ManyToMany(fetch = FetchType.EAGER)
   @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
   private List<Role> roles;
-
   @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
   @JoinColumn(name = "company_id")
   private Company company;
-
   @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
   private List<Post> posts;
-
   @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
   private List<Comment> comments;
-
   @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
   private List<Project> projects;
-
   @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
   private List<Postulation> postulations;
-
   @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
   private List<Rate> rates;
-
   @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
   private List<Skill> skills;
   @Embedded
   private AuditSection auditSection = new AuditSection();
+  public User() {
+  }
 
   public User(String firstName, String lastName, String username, String email, String password) {
     this.firstName = firstName;

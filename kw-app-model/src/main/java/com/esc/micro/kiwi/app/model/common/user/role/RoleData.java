@@ -4,10 +4,10 @@ import java.io.Serializable;
 
 public class RoleData implements Serializable {
 
+  private String name;
+
   public RoleData() {
   }
-
-  private String name;
 
   public String getName() {
     return name;

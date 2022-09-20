@@ -2,12 +2,10 @@ package com.esc.micro.kiwi.core.model.common.utils;
 
 public class ResourceNotFoundException extends RuntimeException {
   private static final long serialVersionUID = 1L;
-
-  private transient ExceptionResponse apiResponse;
-
   private final String resourceName;
   private final String fieldName;
   private final Object fieldValue;
+  private transient ExceptionResponse apiResponse;
 
   public ResourceNotFoundException(String resourceName, String fieldName, Object fieldValue) {
     super();

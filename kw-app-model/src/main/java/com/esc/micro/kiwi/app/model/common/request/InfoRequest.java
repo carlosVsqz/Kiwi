@@ -6,32 +6,22 @@ import java.io.Serializable;
 
 public class InfoRequest implements Serializable {
 
-  public InfoRequest() {
-  }
-
   @JsonIgnore
   private static final long serialVersionUID = 1L;
   private String street;
-
   private String suite;
-
   private String city;
-
   private String zipcode;
-
   private String companyName;
-
   private String catchPhrase;
-
   private String bs;
-
   private String website;
-
   private String phone;
-
   private String lat;
-
   private String lng;
+
+  public InfoRequest() {
+  }
 
   public String getStreet() {
     return street;

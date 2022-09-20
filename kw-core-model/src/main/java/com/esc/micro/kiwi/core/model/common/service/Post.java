@@ -4,8 +4,6 @@ import com.esc.micro.kiwi.core.model.common.manager.ManagerEntity;
 import com.esc.micro.kiwi.core.model.common.project.Project;
 import com.esc.micro.kiwi.core.model.common.user.Comment;
 import com.esc.micro.kiwi.core.model.common.user.User;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
@@ -21,45 +19,36 @@ import java.util.Objects;
 @Table(name = "posts")
 public class Post extends ManagerEntity<Long, Post> {
   private static final long serialVersionUID = 1L;
-
-  public Post() {
-  }
-
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-
   @Column(name = "name")
   private String name;
-
   @Column(name = "description")
   private String Description;
-
   @Column(name = "url_storage")
   private String URLStorage;
-
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "user_id")
   private User user;
-
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "category_id")
   private Category category;
-
   @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(name = "post_tag",
       joinColumns = @JoinColumn(name = "post_id", referencedColumnName = "id"),
       inverseJoinColumns = @JoinColumn(name = "tag_id", referencedColumnName = "id"))
   private List<Tag> tags;
-
   @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(name = "post_project",
       joinColumns = @JoinColumn(name = "post_id", referencedColumnName = "id"),
       inverseJoinColumns = @JoinColumn(name = "project_id", referencedColumnName = "id"))
   private List<Project> projects;
-
   @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
   private List<Comment> comments;
+
+  public Post() {
+  }
 
   /**
    * Gets user.

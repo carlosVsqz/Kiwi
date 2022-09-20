@@ -5,11 +5,10 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({"usernameOrEmail", "password"})
 public class LoginRequest {
 
-  public LoginRequest() {
-  }
-
   private String usernameOrEmail;
   private String password;
+  public LoginRequest() {
+  }
 
   public String getUsernameOrEmail() {
     return usernameOrEmail;

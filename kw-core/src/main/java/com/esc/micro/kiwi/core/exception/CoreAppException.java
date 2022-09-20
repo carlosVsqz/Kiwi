@@ -1,6 +1,6 @@
 package com.esc.micro.kiwi.core.exception;
 
-public class CoreAppException extends RuntimeException{
+public class CoreAppException extends RuntimeException {
 
   private static final long serialVersionUID = 1L;
 

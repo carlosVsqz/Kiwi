@@ -28,8 +28,8 @@ import springfox.documentation.swagger2.configuration.Swagger2DocumentationConfi
     SwaggerUiWebFluxConfiguration.class,
     SwaggerUiWebMvcConfiguration.class
 })
-@AutoConfigureAfter({ WebMvcAutoConfiguration.class, JacksonAutoConfiguration.class,
-    HttpMessageConvertersAutoConfiguration.class, RepositoryRestMvcAutoConfiguration.class })
+@AutoConfigureAfter({WebMvcAutoConfiguration.class, JacksonAutoConfiguration.class,
+    HttpMessageConvertersAutoConfiguration.class, RepositoryRestMvcAutoConfiguration.class})
 public class OpenApiAutoConfiguration {
 
 }

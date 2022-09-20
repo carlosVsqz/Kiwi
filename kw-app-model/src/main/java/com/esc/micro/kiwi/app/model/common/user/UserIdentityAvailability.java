@@ -4,9 +4,9 @@ import java.io.Serializable;
 
 public class UserIdentityAvailability implements Serializable {
 
+  private Boolean available;
+
   public UserIdentityAvailability() {
   }
-
-  private Boolean available;
 
 }

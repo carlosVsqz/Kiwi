@@ -2,9 +2,6 @@ package com.esc.micro.kiwi.core.model.common.user;
 
 import com.esc.micro.kiwi.core.model.common.manager.ManagerEntity;
 import com.esc.micro.kiwi.core.model.common.service.Post;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
@@ -17,30 +14,24 @@ import java.util.Objects;
 @Table(name = "comments")
 public class Comment extends ManagerEntity<Long, Comment> {
   private static final long serialVersionUID = 1L;
-
-  public Comment() {
-  }
-
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-
   @Column(name = "body")
   private String body;
-
   @Column(name = "name")
   private String name;
-
   @Column(name = "email")
   private String email;
-
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "user_id")
   private User user;
-
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "post_id")
   private Post post;
+
+  public Comment() {
+  }
 
   /**
    * Instantiates a new Comment.
@@ -60,6 +51,10 @@ public class Comment extends ManagerEntity<Long, Comment> {
     return this.user;
   }
 
+  public void setUser(User user) {
+    this.user = user;
+  }
+
   /**
    * Gets post.
    *
@@ -67,6 +62,10 @@ public class Comment extends ManagerEntity<Long, Comment> {
    */
   public Post getPost() {
     return this.post;
+  }
+
+  public void setPost(Post post) {
+    this.post = post;
   }
 
   @Override
@@ -115,13 +114,5 @@ public class Comment extends ManagerEntity<Long, Comment> {
 
   public void setEmail(String email) {
     this.email = email;
-  }
-
-  public void setUser(User user) {
-    this.user = user;
-  }
-
-  public void setPost(Post post) {
-    this.post = post;
   }
 }

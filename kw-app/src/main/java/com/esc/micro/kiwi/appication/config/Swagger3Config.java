@@ -1,10 +1,8 @@
 package com.esc.micro.kiwi.appication.config;
 
-import io.swagger.annotations.ApiOperation;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.*;
@@ -20,6 +18,7 @@ import java.util.List;
 public class Swagger3Config {
 
   public static final String AUTHORIZATION_HEADER = "Authorization";
+
   private ApiInfo apiInfo() {
     return new ApiInfo("Utatlan Application",
         "This is a description",

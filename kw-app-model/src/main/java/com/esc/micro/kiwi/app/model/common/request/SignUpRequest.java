@@ -6,9 +6,6 @@ import java.io.Serializable;
 
 public class SignUpRequest implements Serializable {
 
-  public SignUpRequest() {
-  }
-
   @JsonIgnore
   private static final long serialVersionUID = 7702134516418120340L;
   private String firstName;
@@ -16,6 +13,8 @@ public class SignUpRequest implements Serializable {
   private String username;
   private String email;
   private String password;
+  public SignUpRequest() {
+  }
 
   public String getFirstName() {
     return firstName;

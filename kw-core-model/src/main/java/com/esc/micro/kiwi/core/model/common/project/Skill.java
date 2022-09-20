@@ -3,9 +3,6 @@ package com.esc.micro.kiwi.core.model.common.project;
 import com.esc.micro.kiwi.core.model.common.manager.ManagerEntity;
 import com.esc.micro.kiwi.core.model.common.user.User;
 import com.esc.micro.kiwi.core.model.common.user.init.Postulation;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
@@ -18,21 +15,18 @@ import java.util.Objects;
 @Table(name = "skills")
 public class Skill extends ManagerEntity<Long, Skill> {
   private static final long serialVersionUID = 1L;
-
-  public Skill() {
-  }
-
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "user_id")
   private User user;
-
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "postulation_id")
   private Postulation postulation;
+
+  public Skill() {
+  }
 
   @Override
   public Long getId() {

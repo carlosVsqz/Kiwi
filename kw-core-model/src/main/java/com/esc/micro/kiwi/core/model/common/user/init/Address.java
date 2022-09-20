@@ -14,32 +14,25 @@ import java.util.Objects;
 @Table(name = "address")
 public class Address extends ManagerEntity<Long, Address> {
   private static final long serialVersionUID = 1L;
-
-  public Address() {
-  }
-
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-
   @Column(name = "street")
   private String street;
-
   @Column(name = "suite")
   private String suite;
-
   @Column(name = "city")
   private String city;
-
   @Column(name = "zipcode")
   private String zipcode;
-
   @OneToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "geo_id")
   private Geo geo;
-
   @OneToOne(mappedBy = "address")
   private User user;
+
+  public Address() {
+  }
 
   /**
    * Instantiates a new Address.

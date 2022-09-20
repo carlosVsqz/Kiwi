@@ -4,10 +4,9 @@ import java.io.Serializable;
 
 public class UserSummary implements Serializable {
 
-  public UserSummary() {
-  }
-
   private String username;
   private String firstName;
   private String lastName;
+  public UserSummary() {
+  }
 }

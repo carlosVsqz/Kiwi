@@ -4,9 +4,6 @@ import com.esc.micro.kiwi.core.model.common.manager.ManagerEntity;
 import com.esc.micro.kiwi.core.model.common.project.Project;
 import com.esc.micro.kiwi.core.model.common.user.User;
 import com.esc.micro.kiwi.core.model.common.user.init.Company;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
@@ -19,25 +16,21 @@ import java.util.Objects;
 @Table(name = "rates")
 public class Rate extends ManagerEntity<Long, Rate> {
   private static final long serialVersionUID = 1L;
-
-  public Rate() {
-  }
-
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "user_id")
   private User user;
-
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "project_id")
   private Project project;
-
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "company_id")
   private Company company;
+
+  public Rate() {
+  }
 
   @Override
   public boolean equals(Object o) {

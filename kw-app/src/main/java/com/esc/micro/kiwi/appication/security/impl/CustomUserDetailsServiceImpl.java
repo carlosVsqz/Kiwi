@@ -5,7 +5,6 @@ import com.esc.micro.kiwi.app.model.common.user.UserData;
 import com.esc.micro.kiwi.appication.security.CustomUserDetailsService;
 import com.esc.micro.kiwi.appication.security.model.UserPrincipal;
 import com.esc.micro.kiwi.core.services.user.DetailsUserService;
-import com.esc.micro.kiwi.core.services.user.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

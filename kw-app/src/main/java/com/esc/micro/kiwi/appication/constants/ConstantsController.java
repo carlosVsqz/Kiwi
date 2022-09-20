@@ -3,10 +3,6 @@ package com.esc.micro.kiwi.appication.constants;
 public final class ConstantsController {
   public static final String tokenType = "Bearer";
 
-  public static class PathAPIRedirection {
-    public static final String USERS_SUCCESS_REDIRECTION = "/api/users/{username}";
-  }
-
   public interface ControllerConstants {
     interface ApiEndPoints {
       interface Auth_ {
@@ -31,5 +27,9 @@ public final class ConstantsController {
 
       }
     }
+  }
+
+  public static class PathAPIRedirection {
+    public static final String USERS_SUCCESS_REDIRECTION = "/api/users/{username}";
   }
 }

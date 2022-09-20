@@ -1,9 +1,6 @@
 package com.esc.micro.kiwi.core.model.common.project;
 
 import com.esc.micro.kiwi.core.model.common.manager.ManagerEntity;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
@@ -17,19 +14,17 @@ import java.util.Objects;
 @Table(name = "scopes")
 public class Scope extends ManagerEntity<Long, Scope> {
   private static final long serialVersionUID = 1L;
-
-  public Scope() {
-  }
-
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-
   @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(name = "scope_project",
       joinColumns = @JoinColumn(name = "scope_id", referencedColumnName = "id"),
       inverseJoinColumns = @JoinColumn(name = "project_id", referencedColumnName = "id"))
   private List<Project> projects;
+
+  public Scope() {
+  }
 
   @Override
   public boolean equals(Object o) {

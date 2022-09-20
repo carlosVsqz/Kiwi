@@ -50,7 +50,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             "/webjars/**")
         .permitAll()
         .and()
-        .addFilterBefore(jwtAuthenticationFilter,UsernamePasswordAuthenticationFilter.class);
+        .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
     http.headers().xssProtection();
 
   }

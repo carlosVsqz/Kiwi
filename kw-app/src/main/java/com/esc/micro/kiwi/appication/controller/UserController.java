@@ -58,7 +58,7 @@ public class UserController {
   public ResponseEntity<UserData> addUser(@RequestBody UserData user) {
     UserData newUser = userService.addUser(user);
 
-    if(newUser == null){
+    if (newUser == null) {
       return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
     }
     return new ResponseEntity<>(newUser, HttpStatus.CREATED);

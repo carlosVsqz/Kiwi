@@ -1,9 +1,6 @@
 package com.esc.micro.kiwi.core.model.common.service;
 
 import com.esc.micro.kiwi.core.model.common.manager.ManagerEntity;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.Hibernate;
 
@@ -22,20 +19,17 @@ import java.util.Objects;
 public class Category extends ManagerEntity<Long, Category> {
 
   private static final long serialVersionUID = 1L;
-
-  public Category() {
-  }
-
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-
   @Column(name = "name")
   private String name;
-
   @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
   @ToString.Exclude
   private List<Post> posts;
+
+  public Category() {
+  }
 
   /**
    * Instantiates a new Category.

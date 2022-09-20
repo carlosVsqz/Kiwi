@@ -15,7 +15,8 @@ public class ExceptionResponse {
 
   private HttpStatus status;
 
-  public ExceptionResponse() {}
+  public ExceptionResponse() {
+  }
 
   public ExceptionResponse(Boolean success, String message) {
     this.success = success;

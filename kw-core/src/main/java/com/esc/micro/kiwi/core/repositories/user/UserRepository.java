@@ -21,6 +21,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
   @Query("select u from User u where u.status = ?1")
   Set<User> getAllByStatus();
+
   Optional<User> findByUsernameOrEmail(String username, String email);
 
   default User getUserByName(String username) {

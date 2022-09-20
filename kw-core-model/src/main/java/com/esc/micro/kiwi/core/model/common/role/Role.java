@@ -1,8 +1,5 @@
 package com.esc.micro.kiwi.core.model.common.role;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.hibernate.Hibernate;
 import org.hibernate.annotations.NaturalId;
 
@@ -16,17 +13,16 @@ import java.util.Objects;
 @Table(name = "roles")
 public class Role {
 
-  public Role() {
-  }
-
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-
   @Enumerated(EnumType.STRING)
   @NaturalId
   @Column(name = "name")
   private RoleName name;
+
+  public Role() {
+  }
 
   /**
    * Instantiates a new Role.

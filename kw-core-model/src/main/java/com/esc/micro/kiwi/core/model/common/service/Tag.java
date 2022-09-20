@@ -1,9 +1,6 @@
 package com.esc.micro.kiwi.core.model.common.service;
 
 import com.esc.micro.kiwi.core.model.common.manager.ManagerEntity;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
@@ -20,21 +17,18 @@ import java.util.Objects;
 public class Tag extends ManagerEntity<Long, Tag> {
 
   private static final long serialVersionUID = 1L;
-
-  public Tag() {
-  }
-
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-
   @Column(name = "name")
   private String name;
-
   @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(name = "post_tag", joinColumns = @JoinColumn(name = "tag_id", referencedColumnName = "id"),
       inverseJoinColumns = @JoinColumn(name = "post_id", referencedColumnName = "id"))
   private List<Post> posts;
+
+  public Tag() {
+  }
 
   /**
    * Instantiates a new Tag.
