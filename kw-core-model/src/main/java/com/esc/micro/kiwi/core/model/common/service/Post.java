@@ -7,10 +7,7 @@ import com.esc.micro.kiwi.core.model.common.user.User;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * The type Post.
@@ -25,7 +22,26 @@ public class Post extends ManagerEntity<Long, Post> {
   @Column(name = "name")
   private String name;
   @Column(name = "description")
-  private String Description;
+  private String description;
+
+  @Column(name = "image")
+  private String image;
+
+  @Column(name ="type")
+  private String type;
+
+  @Column(name = "title")
+  private String title;
+
+  private boolean isTrending;
+
+  private boolean status;
+
+  private Date publicDate;
+
+  @Column(name = "content")
+  private String content;
+
   @Column(name = "url_storage")
   private String URLStorage;
   @ManyToOne(fetch = FetchType.LAZY)
@@ -122,11 +138,11 @@ public class Post extends ManagerEntity<Long, Post> {
   }
 
   public String getDescription() {
-    return Description;
+    return description;
   }
 
   public void setDescription(String description) {
-    Description = description;
+    this.description = description;
   }
 
   public String getURLStorage() {
@@ -161,12 +177,68 @@ public class Post extends ManagerEntity<Long, Post> {
     this.comments = comments;
   }
 
+  public String getImage() {
+    return image;
+  }
+
+  public void setImage(String image) {
+    this.image = image;
+  }
+
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public String getTitle() {
+    return title;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
+  public boolean isTrending() {
+    return isTrending;
+  }
+
+  public void setTrending(boolean trending) {
+    isTrending = trending;
+  }
+
+  public String getContent() {
+    return content;
+  }
+
+  public void setContent(String content) {
+    this.content = content;
+  }
+
+  public boolean isStatus() {
+    return status;
+  }
+
+  public void setStatus(boolean status) {
+    this.status = status;
+  }
+
+  public Date getPublicDate() {
+    return publicDate;
+  }
+
+  public void setPublicDate(Date publicDate) {
+    this.publicDate = publicDate;
+  }
+
   @Override
   public String toString() {
     return "Post{" +
         "id=" + id +
         ", name='" + name + '\'' +
-        ", Description='" + Description + '\'' +
+        ", Description='" + description + '\'' +
         ", URLStorage='" + URLStorage + '\'' +
         ", user=" + user +
         ", category=" + category +

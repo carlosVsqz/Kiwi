@@ -240,4 +240,28 @@ public class User extends ManagerEntity<Long, User> implements Auditable {
     this.id = id;
   }
 
+  @Override
+  public String toString() {
+    return "User{" +
+        "id=" + id +
+        ", email='" + email + '\'' +
+        ", firstName='" + firstName + '\'' +
+        ", lastName='" + lastName + '\'' +
+        ", password='" + password + '\'' +
+        ", phone='" + phone + '\'' +
+        ", username='" + username + '\'' +
+        ", webSite='" + webSite + '\'' +
+        ", status=" + status +
+        ", address=" + address +
+        ", roles=" + roles +
+        ", company=" + company +
+        ", posts=" + posts +
+        ", comments=" + comments +
+        ", projects=" + projects +
+        ", postulations=" + postulations +
+        ", rates=" + rates +
+        ", skills=" + skills +
+        ", auditSection=" + auditSection +
+        '}';
+  }
 }

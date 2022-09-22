@@ -17,9 +17,4 @@ public class KiwiApplication {
     return new ModelMapper();
   }
 
-//  @Bean
-//  public JwtAuthenticationFilter jwtAuthenticationFilter() {
-//    return new JwtAuthenticationFilter();
-//  }
-
 }
