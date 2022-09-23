@@ -7,6 +7,7 @@ public final class ConstantsController {
     interface ApiEndPoints {
       String LIMIT = "_limit";
       String TYPE_LIKE = "_limit";
+
       interface Auth_ {
         String BASE = "/api";
         String LOGIN = "/auth/login";
@@ -19,7 +20,10 @@ public final class ConstantsController {
 
       interface Post_ {
         String BASE_POST = "/posts";
-        String _POST_GET_ONE = "/post/{postId}";
+        String BASE_CATEGORIES = "/categories";
+        String BASE_TAG = "/tag";
+
+        String _POST_GET_ONE = "/{postId}";
       }
 
       interface Project_ {

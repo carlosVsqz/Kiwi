@@ -39,7 +39,7 @@ public class PostTest {
     Post post = new Post();
 
     post.setName("post 1");
-    post.setImage("https://imgblur.com/qwerty");
+    post.setImage("https://imgur.com/gallery/wPBRhev");
 
     List<Tag> tags = new ArrayList<>();
 
@@ -96,7 +96,7 @@ public class PostTest {
     post.setType("tipo b");
     post.setTitle("Las pasas dulces de la calle");
     post.setName("post 1");
-    post.setImage("https://imgblur.com/qwerty");
+    post.setImage("https://imgur.com/gallery/wPBRhev");
 
     post.setContent("Más vale tarde, porque por la mañana duermo");
     post.setDescription("Esta ingeniosa frase bromea con el popular refrán “más vale tarde que nunca”, y le da un giro cómico.");

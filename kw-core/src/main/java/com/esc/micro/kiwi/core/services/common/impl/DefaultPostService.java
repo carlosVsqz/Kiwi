@@ -15,6 +15,7 @@ import org.springframework.util.Assert;
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -42,6 +43,17 @@ public class DefaultPostService implements PostService {
     }
 
     return postPostDataMapper.convertAll(posts);
+  }
+
+  @Override
+  public Optional<PostData> getPostById(Long id) {
+    Optional<PostData> post;
+
+    Optional<Post> optionalPost = postRepository.findById(id);
+
+    post = Optional.ofNullable(postPostDataMapper.convert(optionalPost.get()));
+
+    return post;
   }
 
 }

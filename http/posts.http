@@ -1,2 +1,15 @@
+### get posts
 
 GET http://localhost:8080/posts
+
+### get post
+
+GET http://localhost:8080/posts/1
+
+### get Categories post
+
+GET http://localhost:8080/posts/categories
+
+### get post tags
+
+GET http://localhost:8080/posts/tag
