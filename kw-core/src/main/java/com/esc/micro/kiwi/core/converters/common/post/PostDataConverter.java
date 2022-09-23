@@ -35,7 +35,7 @@ public class PostDataConverter extends AbstractValidator<Post, PostData> impleme
     final PostData postData = mapper.map(source, PostData.class);
 
     postData.setTags(tagDataMapper.convertAll(source.getTags()));
-    postData.setCategory(categoryDataMapper.convertAll(Collections.singleton(source.getCategory())));
+    postData.setCategory(categoryDataMapper.convertAll(source.getCategories()));
 
     return postData;
   }

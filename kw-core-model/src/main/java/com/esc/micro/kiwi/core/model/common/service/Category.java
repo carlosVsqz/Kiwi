@@ -24,9 +24,12 @@ public class Category extends ManagerEntity<Long, Category> {
   private Long id;
   @Column(name = "name")
   private String name;
-  @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
-  @ToString.Exclude
-  private List<Post> posts;
+
+  @Column(name = "key")
+  private String key;
+
+  @Column(name = "image")
+  private String image;
 
   public Category() {
   }
@@ -39,27 +42,6 @@ public class Category extends ManagerEntity<Long, Category> {
   public Category(String name) {
     super();
     this.name = name;
-  }
-
-  /**
-   * Gets posts.
-   *
-   * @return the posts
-   */
-  public List<Post> getPosts() {
-    return posts == null ? null : new ArrayList<>(posts);
-  }
-
-  /**
-   * Sets posts.
-   *
-   * @param posts the posts
-   */
-  public void setPosts(List<Post> posts) {
-    if (posts == null)
-      this.posts = null;
-    else
-      this.posts = Collections.unmodifiableList(posts);
   }
 
   @Override
@@ -92,5 +74,21 @@ public class Category extends ManagerEntity<Long, Category> {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public String getKey() {
+    return key;
+  }
+
+  public void setKey(String key) {
+    this.key = key;
+  }
+
+  public String getImage() {
+    return image;
+  }
+
+  public void setImage(String image) {
+    this.image = image;
   }
 }

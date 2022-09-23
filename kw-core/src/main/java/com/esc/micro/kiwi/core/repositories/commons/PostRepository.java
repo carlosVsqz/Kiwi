@@ -24,7 +24,7 @@ where p.status = 1;
    */
   @Query(value = "select p from Post p " +
       "left join fetch p.tags t " +
-      "left join fetch p.category c " +
+      "left join fetch p.categories c " +
       "left join fetch p.user u " +
       "where p.status = true ",
       countQuery = "select count (p) from Post p join p.user"

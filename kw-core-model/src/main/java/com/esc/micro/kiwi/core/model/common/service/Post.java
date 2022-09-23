@@ -27,7 +27,7 @@ public class Post extends ManagerEntity<Long, Post> {
   @Column(name = "image")
   private String image;
 
-  @Column(name ="type")
+  @Column(name = "type")
   private String type;
 
   @Column(name = "title")
@@ -47,21 +47,24 @@ public class Post extends ManagerEntity<Long, Post> {
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "user_id")
   private User user;
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "category_id")
-  private Category category;
   @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(name = "post_tag",
       joinColumns = @JoinColumn(name = "post_id", referencedColumnName = "id"),
       inverseJoinColumns = @JoinColumn(name = "tag_id", referencedColumnName = "id"))
-  private List<Tag> tags;
+  private Set<Tag> tags;
   @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(name = "post_project",
       joinColumns = @JoinColumn(name = "post_id", referencedColumnName = "id"),
       inverseJoinColumns = @JoinColumn(name = "project_id", referencedColumnName = "id"))
-  private List<Project> projects;
-  @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+  private Set<Project> projects;
+  @OneToMany(mappedBy = "post", cascade = CascadeType.REMOVE)
   private List<Comment> comments;
+
+  @ManyToMany(fetch = FetchType.LAZY)
+  @JoinTable(name = "post_category",
+      joinColumns = @JoinColumn(name = "post_id", referencedColumnName = "id"),
+      inverseJoinColumns = @JoinColumn(name = "category_id", referencedColumnName = "id"))
+  private Set<Category> categories;
 
   public Post() {
   }
@@ -84,25 +87,24 @@ public class Post extends ManagerEntity<Long, Post> {
     this.user = user;
   }
 
-  /**
-   * Gets tags.
-   *
-   * @return the tags
-   */
-  public List<Tag> getTags() {
-    return this.tags == null ? null : new ArrayList<>(tags);
+
+  public Set<Tag> getTags() {
+    return tags;
   }
 
-  /**
-   * Sets tags.
-   *
-   * @param tags the tags
-   */
-  public void setTags(List<Tag> tags) {
+  public void setTags(Set<Tag> tags) {
     if (tags == null)
       this.tags = null;
     else
-      this.tags = Collections.unmodifiableList(tags);
+      this.tags = Collections.unmodifiableSet(tags);
+  }
+
+  public void setProjects(Set<Project> projects) {
+    this.projects = projects;
+  }
+
+  public void setComments(List<Comment> comments) {
+    this.comments = comments;
   }
 
   @Override
@@ -153,28 +155,20 @@ public class Post extends ManagerEntity<Long, Post> {
     this.URLStorage = URLStorage;
   }
 
-  public Category getCategory() {
-    return category;
+  public Set<Category> getCategories() {
+    return categories;
   }
 
-  public void setCategory(Category category) {
-    this.category = category;
+  public void setCategories(Set<Category> categories) {
+    this.categories = categories;
   }
 
-  public List<Project> getProjects() {
+  public Set<Project> getProjects() {
     return projects;
-  }
-
-  public void setProjects(List<Project> projects) {
-    this.projects = projects;
   }
 
   public List<Comment> getComments() {
     return comments;
-  }
-
-  public void setComments(List<Comment> comments) {
-    this.comments = comments;
   }
 
   public String getImage() {
@@ -241,7 +235,7 @@ public class Post extends ManagerEntity<Long, Post> {
         ", Description='" + description + '\'' +
         ", URLStorage='" + URLStorage + '\'' +
         ", user=" + user +
-        ", category=" + category +
+        ", category=" + categories +
         ", tags=" + tags +
         '}';
   }
