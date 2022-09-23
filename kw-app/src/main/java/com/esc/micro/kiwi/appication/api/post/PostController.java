@@ -1,5 +1,6 @@
 package com.esc.micro.kiwi.appication.api.post;
 
+import com.esc.micro.kiwi.app.model.common.post.NewPostData;
 import com.esc.micro.kiwi.app.model.common.response.ApiResponse;
 import com.esc.micro.kiwi.app.model.common.response.post.PostData;
 import com.esc.micro.kiwi.appication.api.Manager;
@@ -10,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -64,7 +66,7 @@ public class PostController<T> extends Manager {
   }
 
   @PostMapping
-  ResponseEntity<T> createPost() {
+  ResponseEntity<T> createPost(@Valid @RequestBody final NewPostData postData) {
     return null;
   }
 

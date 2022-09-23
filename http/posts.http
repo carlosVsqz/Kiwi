@@ -13,3 +13,31 @@ GET http://localhost:8080/posts/categories
 ### get post tags
 
 GET http://localhost:8080/posts/tag
+
+### create Post
+#for create post is necesari List tasg, current user, valid categories.
+
+POST http://localhost:8080/posts
+Content-Type: application/json
+
+{
+  "categories": [
+    {
+      "id": "1",
+      "key": "1"
+    }
+  ],
+  "content": "You're joking. You're joking! I can't believe my eyes!",
+  "description": "Omg you guys look :D",
+  "image": "https://imgur.com/gallery/sSHnm",
+  "name": "jimmySteve1",
+  "tags": [
+    {
+      "id": "1",
+      "name": "tag1"
+    }
+  ],
+  "title": ":D ",
+  "type": "rest",
+  "urlStorage": "https://vladmihalcea.com/hibernate-multiplebagfetchexception/"
+}
