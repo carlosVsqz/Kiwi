@@ -19,6 +19,7 @@ GET http://localhost:8080/posts/tag
 
 POST http://localhost:8080/posts
 Content-Type: application/json
+Authorization: Bearer {{auth_token}}
 
 {
   "categories": [
@@ -41,3 +42,11 @@ Content-Type: application/json
   "type": "rest",
   "urlStorage": "https://vladmihalcea.com/hibernate-multiplebagfetchexception/"
 }
+
+### get unaproved posts
+GET http://localhost:8080/posts/unapproved
+Authorization: Bearer {{auth_token}}
+
+### aprove post
+POST http://localhost:8080/posts/approve/12
+Authorization: Bearer {{auth_token}}

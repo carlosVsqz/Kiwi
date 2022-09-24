@@ -41,4 +41,24 @@ where p.status = 1;
       countQuery = "select count (p) from Post p join p.user"
   )
   Optional<Post> findById(@Param("id") Long id);
+
+  @Query(value = "select p from Post p " +
+      "left join fetch p.tags t " +
+      "left join fetch p.categories c " +
+      "left join fetch p.user u " +
+      "where p.status = false and p.id = :id",
+      countQuery = "select count (p) from Post p join p.user"
+  )
+  Optional<Post> findByUnapprovedById(@Param("id") Long id);
+
+
+  @Query(
+      value = "select p from Post p " +
+          "left join fetch p.tags t " +
+          "left join fetch p.categories c " +
+          "left join fetch p.user u " +
+          "where p.status = false ",
+      countQuery = "select count (p) from Post p join p.user"
+  )
+  Page<Post> findAllUnapproved(Pageable page);
 }

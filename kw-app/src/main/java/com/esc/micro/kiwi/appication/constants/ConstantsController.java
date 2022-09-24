@@ -24,6 +24,8 @@ public final class ConstantsController {
         String BASE_TAG = "/tag";
 
         String _POST_GET_ONE = "/{postId}";
+        String _POST_GET_UNAPPROVED = "/unapproved";
+        String _POST_APPROVE_ONE = "/approve/{postId}";
       }
 
       interface Project_ {

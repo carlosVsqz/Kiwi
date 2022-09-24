@@ -1,7 +1,9 @@
 package com.esc.micro.kiwi.app.model.common.post;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class NewPostData implements Serializable {
 
@@ -17,6 +19,30 @@ public class NewPostData implements Serializable {
   private List<Category> categories;
 
   public NewPostData() {
+  }
+
+  public List<Long> getTagsListId() {
+    List<Long> ids = new ArrayList<>();
+
+    if (Objects.nonNull(this.getTags())) {
+      for (Tag tag : this.getTags()) {
+        ids.add(Long.valueOf(tag.getId()));
+      }
+    }
+
+    return ids;
+  }
+
+  public List<Long> getCategoryListId() {
+    List<Long> ids = new ArrayList<>();
+
+    if (Objects.nonNull(this.getCategories())) {
+      for (Category category : this.getCategories()) {
+        ids.add(Long.valueOf(category.getId()));
+      }
+    }
+
+    return ids;
   }
 
   public String getName() {

@@ -12,6 +12,6 @@ public abstract class AbstractValidator<T, S> {
   public boolean validateType(Class<T> type, Class<S> otherType) {
     TypeMap<T, S> typeMap = mapper.getTypeMap(type, otherType);
 
-    return typeMap == null ? Boolean.TRUE : Boolean.FALSE;
+    return typeMap == null;
   }
 }
