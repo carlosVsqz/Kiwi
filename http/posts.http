@@ -6,15 +6,15 @@ GET http://localhost:8080/posts
 
 GET http://localhost:8080/posts/1
 
-### get Categories post
+### get Categories post #1
 
 GET http://localhost:8080/posts/categories
 
-### get post tags
+### get post tags #2
 
 GET http://localhost:8080/posts/tag
 
-### create Post
+### create Post #3
 #for create post is necesari List tasg, current user, valid categories.
 
 POST http://localhost:8080/posts
@@ -30,15 +30,15 @@ Authorization: Bearer {{auth_token}}
   ],
   "content": "You're joking. You're joking! I can't believe my eyes!",
   "description": "Omg you guys look :D",
-  "image": "https://imgur.com/gallery/sSHnm",
-  "name": "jimmySteve1",
+  "image": "https://i.postimg.cc/mrZgq5ck/url-https-california-times-brightspot-s3-amazonaws.png",
+  "name": "11 cosas por las que amas a tu gato y no lo sabías (o quizá sí)",
   "tags": [
     {
       "id": "1",
       "name": "tag1"
     }
   ],
-  "title": ":D ",
+  "title": "11 cosas por las que amas a tu gato y no lo sabías (o quizá sí)",
   "type": "rest",
   "urlStorage": "https://vladmihalcea.com/hibernate-multiplebagfetchexception/"
 }
@@ -48,5 +48,5 @@ GET http://localhost:8080/posts/unapproved
 Authorization: Bearer {{auth_token}}
 
 ### aprove post
-POST http://localhost:8080/posts/approve/12
+POST http://localhost:8080/posts/approve/5
 Authorization: Bearer {{auth_token}}

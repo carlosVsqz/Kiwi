@@ -2,7 +2,7 @@ POST http://localhost:8080/api/auth/login
 Content-Type: application/json
 
 {
-  "usernameOrEmail": "CarlosVasquez",
+  "usernameOrEmail": "jgomez4444@mail.com",
   "password": "Password123"
 }
 
@@ -13,9 +13,9 @@ POST http://localhost:8080/api/auth/signup
 Content-Type: application/json
 
 {
-  "firstName": "Carlos",
-  "lastName": "Vasquez",
-  "username": "CarlosVasquez",
-  "email": "carlos.vasquez@escod.com",
+  "firstName": "Juan",
+  "lastName": "Gomez",
+  "username": "jgomez123",
+  "email": "jgomez4444@mail.com",
   "password": "Password123"
 }

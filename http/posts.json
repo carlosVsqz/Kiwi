@@ -1,0 +1,211 @@
+[
+  {
+    "id": "1",
+    "image": "https://i.postimg.cc/HkCjXyR9/JCkGtw7.jpg",
+    "tags": [
+      {
+        "id": "1",
+        "name": "tag1"
+      },
+      {
+        "id": "2",
+        "name": "tag2"
+      },
+      {
+        "id": "3",
+        "name": "tag3"
+      }
+    ],
+    "user": {
+      "email": "carlos.vasquez@escod.com",
+      "firstName": "carlos",
+      "lastName": "vasquez",
+      "password": "$2a$10$PgHagm.zL8YXiBlL0TETtOSrKbKxeGD0hu2s/16ztLkjdQDjNA53u",
+      "phone": null,
+      "username": "CarlosVasquez",
+      "webSite": null,
+      "roles": [
+        {
+          "name": "ROLE_ADMIN"
+        },
+        {
+          "name": "ROLE_USER"
+        }
+      ]
+    },
+    "type": "algo",
+    "title": "hallway",
+    "publicDate": 1663898156412,
+    "category": [
+      {
+        "id": "4",
+        "name": "categoria 4",
+        "key": "4",
+        "quantity": "1",
+        "image": "https://i.postimg.cc/FKDdz4Lt/HE5nyxo.jpg"
+      },
+      {
+        "id": "3",
+        "name": "categoria 3",
+        "key": "3",
+        "quantity": "1",
+        "image": "https://i.postimg.cc/hvH7n17f/jEg9aCH.jpg"
+      },
+      {
+        "id": "2",
+        "name": "categoria 2",
+        "key": "2",
+        "quantity": "1",
+        "image": "https://i.postimg.cc/C5Zf9Q53/7uDKBOx.jpg"
+      },
+      {
+        "id": "1",
+        "name": "categoria 1",
+        "key": "1",
+        "quantity": "5",
+        "image": "https://i.postimg.cc/sDhhcqtS/qtjI1uN.jpg"
+      }
+    ],
+    "description": "Esta ingeniosa frase bromea con el popular refrán “más vale tarde que nunca”, y le da un giro cómico.",
+    "comments": [],
+    "content": "Más vale tarde, porque por la mañana duermo",
+    "trending": false
+  },
+  {
+    "id": "2",
+    "image": "https://i.postimg.cc/zGRSXKWw/otsb2fz.jpg",
+    "tags": [
+      {
+        "id": "1",
+        "name": "tag1"
+      },
+      {
+        "id": "2",
+        "name": "tag2"
+      },
+      {
+        "id": "3",
+        "name": "tag3"
+      }
+    ],
+    "user": {
+      "email": "carlos.vasquez@escod.com",
+      "firstName": "carlos",
+      "lastName": "vasquez",
+      "password": "$2a$10$PgHagm.zL8YXiBlL0TETtOSrKbKxeGD0hu2s/16ztLkjdQDjNA53u",
+      "phone": null,
+      "username": "CarlosVasquez",
+      "webSite": null,
+      "roles": [
+        {
+          "name": "ROLE_ADMIN"
+        },
+        {
+          "name": "ROLE_USER"
+        }
+      ]
+    },
+    "type": "cono",
+    "title": "Cono de trafico",
+    "publicDate": 1663898233340,
+    "category": [
+      {
+        "id": "1",
+        "name": "categoria 1",
+        "key": "1",
+        "quantity": "5",
+        "image": "https://i.postimg.cc/sDhhcqtS/qtjI1uN.jpg"
+      }
+    ],
+    "description": "Esta ingeniosa frase bromea con el popular refrán “más vale tarde que nunca”, y le da un giro cómico.",
+    "comments": [],
+    "content": "Más vale tarde, porque por la mañana duermo",
+    "trending": false
+  },
+  {
+    "id": "3",
+    "image": "https://i.postimg.cc/fy9T0zvP/VXXqPUX.jpg",
+    "tags": [
+      {
+        "id": "1",
+        "name": "tag1"
+      }
+    ],
+    "user": {
+      "email": "carlos.vasquez@escod.com",
+      "firstName": "carlos",
+      "lastName": "vasquez",
+      "password": "$2a$10$PgHagm.zL8YXiBlL0TETtOSrKbKxeGD0hu2s/16ztLkjdQDjNA53u",
+      "phone": null,
+      "username": "CarlosVasquez",
+      "webSite": null,
+      "roles": [
+        {
+          "name": "ROLE_ADMIN"
+        },
+        {
+          "name": "ROLE_USER"
+        }
+      ]
+    },
+    "type": "rest",
+    "title": "Anticongelante",
+    "publicDate": 1663979413655,
+    "category": [
+      {
+        "id": "1",
+        "name": "categoria 1",
+        "key": "1",
+        "quantity": "5",
+        "image": "https://i.postimg.cc/sDhhcqtS/qtjI1uN.jpg"
+      }
+    ],
+    "description": "Omg you guys look :D",
+    "comments": [],
+    "content": "You're joking. You're joking! I can't believe my eyes!",
+    "trending": false
+  },
+  {
+    "id": "4",
+    "image": "https://i.postimg.cc/ydJR6SD4/idpKCGP.jpg",
+    "tags": [
+      {
+        "id": "1",
+        "name": "tag1"
+      }
+    ],
+    "user": {
+      "email": "carlos.vasquez@escod.com",
+      "firstName": "carlos",
+      "lastName": "vasquez",
+      "password": "$2a$10$PgHagm.zL8YXiBlL0TETtOSrKbKxeGD0hu2s/16ztLkjdQDjNA53u",
+      "phone": null,
+      "username": "CarlosVasquez",
+      "webSite": null,
+      "roles": [
+        {
+          "name": "ROLE_ADMIN"
+        },
+        {
+          "name": "ROLE_USER"
+        }
+      ]
+    },
+    "type": "rest",
+    "title": "Campamento",
+    "publicDate": 1663979505679,
+    "category": [
+      {
+        "id": "1",
+        "name": "categoria 1",
+        "key": "1",
+        "quantity": "5",
+        "image": "https://i.postimg.cc/sDhhcqtS/qtjI1uN.jpg"
+      }
+    ],
+    "description": "Omg you guys look :D",
+    "comments": [],
+    "content": "You're joking. You're joking! I can't believe my eyes!",
+    "trending": false
+  }
+]

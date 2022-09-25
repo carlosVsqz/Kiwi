@@ -1,0 +1,43 @@
+{
+  "id": "6",
+  "image": "https://i.postimg.cc/mrZgq5ck/url-https-california-times-brightspot-s3-amazonaws.png",
+  "tags": [
+    {
+      "id": "1",
+      "name": "tag1"
+    }
+  ],
+  "user": {
+    "email": "jgomez4444@mail.com",
+    "firstName": "juan",
+    "lastName": "gomez",
+    "password": "$2a$10$80wjIWonm6WN2xfUO0JRqOxdT2xQZgoAM.SMmseuzu9k2E0GT9h5m",
+    "phone": null,
+    "username": "jgomez123",
+    "webSite": null,
+    "roles": [
+      {
+        "name": "ROLE_ADMIN"
+      },
+      {
+        "name": "ROLE_USER"
+      }
+    ]
+  },
+  "type": "rest",
+  "title": "11 cosas por las que amas a tu gato y no lo sabías (o quizá sí)",
+  "publicDate": 1664056238158,
+  "category": [
+    {
+      "id": "1",
+      "name": "categoria 1",
+      "key": "1",
+      "quantity": "6",
+      "image": "https://i.postimg.cc/sDhhcqtS/qtjI1uN.jpg"
+    }
+  ],
+  "description": "Omg you guys look :D",
+  "comments": null,
+  "content": "You're joking. You're joking! I can't believe my eyes!",
+  "trending": false
+}
